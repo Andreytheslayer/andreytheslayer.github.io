@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Приглашение на свадьбу Лизы и Андрея">
+  <title>Приглашение на свадьбу — Лиза & Андрей</title>
+
+  <!-- Подключение шрифта Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Базовый сброс и шрифты */
+    * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background-color: #0b0b0b;
+      font-family: "Roboto Mono", monospace;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button:focus-visible, input:focus-visible {
+      outline: 2px solid #ffffff !important;
+      outline-offset: 2px;
+    }
+
+    /* Главный контейнер мобильного экрана */
+    .iphone {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      min-width: 320px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(180deg, #222222 0%, #0d0d0d 40%, #000000 100%);
+      padding: 0 20px 100px 20px; /* Отступы по 20px от краев */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Фоновые готические элементы (меч и камень) */
+    .iphone .group-bg {
+      position: absolute;
+      top: 240px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 1400px;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .iphone .group-bg .sword-img {
+      width: 70px;
+      height: 480px;
+      object-fit: contain;
+    }
+
+    .iphone .group-bg .rock-img {
+      width: 160px;
+      height: 900px;
+      object-fit: cover;
+      margin-top: -60px;
+      filter: contrast(120%) brightness(85%);
+    }
+
+    /* Верхние кружева */
+    .iphone .image-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      object-position: top center;
+      z-index: 2;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    /* Хедер */
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 130px;
+      z-index: 3;
+    }
+
+    .text-wrapper-sub {
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* Блок с именами: Лиза & Андрей */
+    .names-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .names-img {
+      max-width: 250px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.8));
+    }
+
+    /* Дата и время 15.11 16:00 */
+    .date-img {
+      height: 28px;
+      max-width: 190px;
+      margin-bottom: 18px;
+      object-fit: contain;
+    }
+
+    .div-location {
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .text-wrapper-address {
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-decoration: underline;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .text-wrapper-address:hover {
+      opacity: 1;
+    }
+
+    /* Форма и общие фреймы */
+    .frame {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      z-index: 3;
+    }
+
+    /* Разделители с лилиями */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .divider .fleur-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(255,255,255,0.15));
+    }
+
+    /* Текстовые блоки правил и дома */
+    .frame-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .text-wrapper-2 {
+      font-weight: 500;
+      font-size: 19px;
+      letter-spacing: 0.03em;
+      text-align: center;
+      width: 100%;
+    }
+
+    .p-rule {
+      font-size: 17px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    .frame-4 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      width: 100%;
+    }
+
+    .text-wrapper-3 {
+      font-weight: 500;
+      font-size: 21px;
+      text-align: center;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+    }
+
+    /* Карточки описания дома */
+    .house-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 18px 20px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .house-card h3 {
+      font-size: 17px;
+      font-weight: 500;
+      text-align: center; /* 1. Заголовки по центру */
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    /* 2. Текст по левому краю с буллитами */
+    .house-card ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+    }
+
+    .house-card ul li {
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.88;
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    .house-card ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .house-card ul li::before {
+      content: "✦";
+      position: absolute;
+      left: 2px;
+      top: 0px;
+      color: #e0e0e0;
+      font-size: 11px;
+    }
+
+    /* Блок анкеты */
+    .frame-6 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .div-2 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .div-2 .bold-text {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .div-3 {
+      font-size: 14px;
+      opacity: 0.65;
+      line-height: 1.45;
+    }
+
+    /* Поле ввода имени гостя */
+    .guest-input-card {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .guest-text-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .guest-text-input:focus {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .guest-text-input::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Секции вопросов (fieldset) */
+    .frame-8 {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      width: 100%;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .frame-8 legend {
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      padding: 0;
+    }
+
+    .question-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .text-wrapper-8 {
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    /* Карточки вариантов ответов */
+    .frame-9 {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 18px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+    }
+
+    .frame-9:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .frame-9:active {
+      transform: scale(0.99);
+    }
+
+    .frame-9.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: #ffffff;
+    }
+
+    /* Радио и Чекбоксы */
+    .rectangle {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid #ffffff;
+      flex-shrink: 0;
+      cursor: pointer;
+      margin: 0;
+      display: grid;
+      place-content: center;
+      background: transparent;
+    }
+
+    .rectangle::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: #ffffff;
+    }
+
+    .rectangle:checked::before {
+      transform: scale(1);
+    }
+
+    .rectangle.checkbox-round {
+      border-radius: 4px;
+    }
+
+    .rectangle.checkbox-round::before {
+      border-radius: 2px;
+    }
+
+    .text-wrapper-9 {
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    /* Дополнительное поле для мест в машине */
+    .seats-subfield {
+      display: none;
+      margin-top: 6px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 2px solid #ffffff;
+      border-radius: 0 8px 8px 0;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .seats-subfield.visible {
+      display: flex;
+    }
+
+    .seats-subfield label {
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    .seats-input {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+    }
+
+    /* Секция условного скрытия при выборе 'Нет' */
+    #house-dependent-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      width: 100%;
+      transition: opacity 0.3s ease;
+    }
+
+    #house-dependent-fields.hidden {
+      display: none !important;
+    }
+
+    /* Кнопка отправки формы */
+    .submit-btn {
+      width: 100%;
+      padding: 16px 24px;
+      margin-top: 10px;
+      background: #ffffff;
+      color: #000000;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+      transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: #e8e8e8;
+      box-shadow: 0 6px 24px rgba(255, 255, 255, 0.3);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Модальное окно подтверждения */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #181818;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+      padding: 30px 24px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-box h4 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .modal-box p {
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    .modal-btn {
+      padding: 12px 20px;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="iphone">
+    <!-- Фоновые элементы: Меч и Камень -->
+    <div class="group-bg" aria-hidden="true">
+      <img class="sword-img" src="img/sword.png" alt="" onerror="this.src='sword.png';">
+      <img class="rock-img" src="img/rock.jpg" alt="" onerror="this.src='rock.png';">
+    </div>
+
+    <!-- Верхние кружева -->
+    <img class="image-top" src="img/lace-top.png" alt="" onerror="this.src='lace-top.png';">
+
+    <!-- Заголовок и имена Лиза & Андрей -->
+    <header>
+      <p class="text-wrapper-sub">приглашение на свадьбу</p>
+      
+      <div class="names-container">
+        <img class="names-img" src="img/names.png" alt="Лиза & Андрей" onerror="this.src='names.png';">
+      </div>
+
+      <img class="date-img" src="img/datetime.png" alt="15.11 16:00" onerror="this.src='datetime.png';">
+      <h1 class="div-location">Дворец бракосочетания №1</h1>
+      <a class="text-wrapper-address" 
+         href="https://yandex.ru/maps/?text=Малый+Харитоньевский+переулок,+10,+стр.1" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        Малый Харитоньевский переулок, 10, стр.1
+      </a>
+    </header>
+
+    <!-- Основная форма / Информационный блок -->
+    <form class="frame" id="weddingForm" aria-label="Анкета гостя">
+
+      <!-- Разделитель: Лилии -->
+      <div class="divider" aria-hidden="true">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+      </div>
+
+      <!-- Пожелания / Дресс-код -->
+      <section class="frame-2" aria-labelledby="guest-guidelines">
+        <h2 id="guest-guidelines" class="text-wrapper-2">🥀 Не покупать — цветы 🥀</h2>
+        <p class="p-rule">💸 Дарить — деньги 💸</p>
+        <p class="p-rule">💃🏼 Надевать — что хочется 💃🏼</p>
+      </section>
+
+      <!-- Разделитель -->
+      <div class="divider" aria-hidden="true">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+      </div>
+
+      <!-- Блок про дом: Заголовки по центру, списки по левому краю с буллитами -->
+      <section class="frame-4" aria-labelledby="party-title">
+        <h2 id="party-title" class="text-wrapper-3">
+          После ЗАГСа едем тусить<br>в «дом», в котором есть:
+        </h2>
+
+        <article class="house-card">
+          <h3>Спальные места</h3>
+          <ul>
+            <li>Бери с собой сменную одежду и обувь, чтобы комфортно себя чувствовать</li>
+          </ul>
+        </article>
+
+        <article class="house-card">
+          <h3>Бассейн</h3>
+          <ul>
+            <li>Возьмите с собой полотенце, купальник, тапочки и т.д.</li>
+            <li>Научитесь плавать</li>
+          </ul>
+        </article>
+
+        <article class="house-card">
+          <h3>Бильярд</h3>
+          <ul>
+            <li>Понадобятся прямые руки и немного удачи</li>
+          </ul>
+        </article>
+
+        <article class="house-card">
+          <h3>Другие развлечения</h3>
+          <ul>
+            <li>Нужно только твое присутствие и хорошее настроение</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Разделитель -->
+      <div class="divider" aria-hidden="true">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+      </div>
+
+      <!-- Анкета -->
+      <section class="frame-4" aria-labelledby="questionnaire-title">
+        <div class="frame-6">
+          <h2 class="div-2" id="questionnaire-title">
+            <span>Анкета для </span><span class="bold-text">одного</span><span> гостя</span>
+          </h2>
+          <p class="div-3">
+            Каждый <strong>сам</strong> заполняет анкету,<br>даже если вы семья / пара и идете вместе
+          </p>
+        </div>
+
+        <!-- Имя гостя -->
+        <div class="guest-input-card">
+          <input type="text" 
+                 class="guest-text-input" 
+                 id="guestName" 
+                 name="guest-name" 
+                 placeholder="Твое имя и фамилия *" 
+                 required>
+        </div>
+
+        <!-- Вопрос 1: Поедешь в дом -->
+        <fieldset class="frame-8">
+          <legend>1/3 Дом</legend>
+          <div class="question-group">
+            <p class="text-wrapper-8">Поедешь в дом после ЗАГСа?</p>
+            <div class="options-list">
+              <label class="frame-9" id="label-house-yes">
+                <input class="rectangle" type="radio" name="go-to-house" value="yes" checked>
+                <span class="text-wrapper-9">✅ ДА</span>
+              </label>
+              <label class="frame-9" id="label-house-no">
+                <input class="rectangle" type="radio" name="go-to-house" value="no">
+                <span class="text-wrapper-9">❌ нет :(</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Зависимый блок: скрывается, если выбран вариант "Нет" -->
+        <div id="house-dependent-fields">
+
+          <fieldset class="frame-8">
+            <!-- Вопрос про ночевку -->
+            <div class="question-group">
+              <p class="text-wrapper-8">Останешься с ночевкой?</p>
+              <div class="options-list">
+                <label class="frame-9">
+                  <input class="rectangle" type="radio" name="sleepover" value="yes">
+                  <span class="text-wrapper-9">Да, остаюсь</span>
+                </label>
+                <label class="frame-9">
+                  <input class="rectangle" type="radio" name="sleepover" value="no">
+                  <span class="text-wrapper-9">Нет, поеду домой</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Вопрос про машину (без варианта Другое + поле свободных мест) -->
+            <div class="question-group">
+              <p class="text-wrapper-8">Поедешь на машине?</p>
+              <div class="options-list">
+                <label class="frame-9" id="driver-option">
+                  <input class="rectangle" type="radio" name="transport" value="driver">
+                  <span class="text-wrapper-9">Да, за рулем</span>
+                </label>
+
+                <!-- Дополнительное поле: сколько есть свободных мест -->
+                <div class="seats-subfield" id="seatsSubfield">
+                  <label for="carSeats">Сколько есть свободных мест в машине?</label>
+                  <input type="number" 
+                         id="carSeats" 
+                         name="car-seats" 
+                         min="1" 
+                         max="8" 
+                         placeholder="Количество мест (например, 2)" 
+                         class="seats-input">
+                </div>
+
+                <label class="frame-9">
+                  <input class="rectangle" type="radio" name="transport" value="passenger">
+                  <span class="text-wrapper-9">Буду пассажиром</span>
+                </label>
+                <label class="frame-9">
+                  <input class="rectangle" type="radio" name="transport" value="no">
+                  <span class="text-wrapper-9">Нет, без машины</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 2/3 Напитки -->
+          <fieldset class="frame-8">
+            <legend>2/3 Напитки</legend>
+            <div class="options-list">
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="drinks" value="wine">
+                <span class="text-wrapper-9">🍷 Вино (сухое / полусладкое)</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="drinks" value="champagne">
+                <span class="text-wrapper-9">🥂 Шампанское / Игристое</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="drinks" value="strong">
+                <span class="text-wrapper-9">🥃 Крепкие напитки</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="drinks" value="beer">
+                <span class="text-wrapper-9">🍺 Пиво / Сидр</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="drinks" value="soft">
+                <span class="text-wrapper-9">🥤 Безалкогольные напитки / соки</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="drinks" value="none">
+                <span class="text-wrapper-9">🚫 Не буду пить</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- 3/3 Еда: добавлен вариант "Ем всё" -->
+          <fieldset class="frame-8">
+            <legend>3/3 Еда</legend>
+            <div class="options-list">
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="food" value="all" id="food-all">
+                <span class="text-wrapper-9">🍽 Ем всё</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="food" value="meat">
+                <span class="text-wrapper-9">🥩 Мясо / Птица</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="food" value="fish">
+                <span class="text-wrapper-9">🐟 Рыба / Морепродукты</span>
+              </label>
+              <label class="frame-9">
+                <input class="rectangle checkbox-round" type="checkbox" name="food" value="vegetarian">
+                <span class="text-wrapper-9">🥦 Вегетарианское меню</span>
+              </label>
+            </div>
+
+            <div style="margin-top: 10px; width: 100%;">
+              <input type="text" 
+                     class="guest-text-input" 
+                     name="food-allergy" 
+                     placeholder="Аллергии или ограничения в еде (если есть)">
+            </div>
+          </fieldset>
+
+        </div> <!-- /#house-dependent-fields -->
+
+        <!-- Кнопка «Отправить форму» -->
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Отправить ответ
+        </button>
+      </section>
+
+      <!-- Финальный разделитель -->
+      <div class="divider" aria-hidden="true" style="margin-top: 10px;">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+        <img class="fleur-img" src="img/fleur.png" alt="" onerror="this.src='fleur.png';">
+      </div>
+    </form>
+  </main>
+
+  <!-- Модальное окно подтверждения отправки -->
+  <div class="modal-overlay" id="confirmModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h4>Спасибо! 🖤</h4>
+      <p id="modalMessage">Твой ответ успешно записан. С нетерпением ждем встречи!</p>
+      <button type="button" class="modal-btn" id="closeModalBtn">Закрыть</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const TELEGRAM_BOT_TOKEN = '8988547373:AAFflrai9T-okn-46EB0J77C_tWsKMLqs5s';
+      const TELEGRAM_CHAT_ID = '324272045';
+
+      const form = document.getElementById('weddingForm');
+      const houseRadioButtons = document.querySelectorAll('input[name="go-to-house"]');
+      const dependentSection = document.getElementById('house-dependent-fields');
+      const transportRadios = document.querySelectorAll('input[name="transport"]');
+      const seatsSubfield = document.getElementById('seatsSubfield');
+      const seatsInput = document.getElementById('carSeats');
+      const foodAllCheckbox = document.getElementById('food-all');
+      const otherFoodCheckboxes = document.querySelectorAll('input[name="food"]:not(#food-all)');
+      const modal = document.getElementById('confirmModal');
+      const modalMessage = document.getElementById('modalMessage');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const submitBtn = document.getElementById('submitBtn');
+
+      // 1. Управление логикой вопроса "Поедешь в дом после ЗАГСа?"
+      function handleHouseChange() {
+        const selectedValue = document.querySelector('input[name="go-to-house"]:checked')?.value;
+        if (selectedValue === 'no') {
+          dependentSection.classList.add('hidden');
+        } else {
+          dependentSection.classList.remove('hidden');
+        }
+      }
+
+      houseRadioButtons.forEach(radio => {
+        radio.addEventListener('change', handleHouseChange);
+      });
+      handleHouseChange();
+
+      // 2. Управление полем свободных мест в машине
+      function handleTransportChange() {
+        const selectedTransport = document.querySelector('input[name="transport"]:checked')?.value;
+        if (selectedTransport === 'driver') {
+          seatsSubfield.classList.add('visible');
+          seatsInput.setAttribute('required', 'true');
+        } else {
+          seatsSubfield.classList.remove('visible');
+          seatsInput.removeAttribute('required');
+          seatsInput.value = '';
+        }
+      }
+
+      transportRadios.forEach(radio => {
+        radio.addEventListener('change', handleTransportChange);
+      });
+
+      // 3. Логика пункта "Ем всё"
+      if (foodAllCheckbox) {
+        foodAllCheckbox.addEventListener('change', (e) => {
+          if (e.target.checked) {
+            otherFoodCheckboxes.forEach(cb => {
+              cb.checked = false;
+              cb.closest('.frame-9').classList.remove('active');
+            });
+          }
+        });
+
+        otherFoodCheckboxes.forEach(cb => {
+          cb.addEventListener('change', () => {
+            if (cb.checked && foodAllCheckbox.checked) {
+              foodAllCheckbox.checked = false;
+              foodAllCheckbox.closest('.frame-9').classList.remove('active');
+            }
+          });
+        });
+      }
+
+      // 4. Подсветка активных карточек ответов
+      function updateActiveStyles() {
+        document.querySelectorAll('.frame-9').forEach(label => {
+          const input = label.querySelector('input');
+          if (input && input.checked) {
+            label.classList.add('active');
+          } else {
+            label.classList.remove('active');
+          }
+        });
+      }
+
+      form.addEventListener('change', updateActiveStyles);
+      updateActiveStyles();
+
+      // 5. Отправка формы в Telegram
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        const guestName = document.getElementById('guestName').value.trim();
+        const goToHouse = document.querySelector('input[name="go-to-house"]:checked')?.value;
+
+        let message = `💍 <b>Новый ответ на приглашение!</b>\n\n`;
+        message += `👤 <b>Гость:</b> ${guestName}\n`;
+        message += `🏡 <b>В дом после ЗАГСа:</b> ${goToHouse === 'yes' ? 'Да ✅' : 'Нет ❌'}\n`;
+
+        if (goToHouse === 'yes') {
+          const sleepover = document.querySelector('input[name="sleepover"]:checked')?.value;
+          const sleepoverText = sleepover === 'yes' ? 'Да, остаюсь' : (sleepover === 'no' ? 'Нет, поеду домой' : 'Не указано');
+
+          const transport = document.querySelector('input[name="transport"]:checked')?.value;
+          let transportText = 'Не указано';
+          if (transport === 'driver') {
+            const seats = seatsInput.value.trim() || 'не указано';
+            transportText = `Да, за рулем (свободных мест: ${seats})`;
+          } else if (transport === 'passenger') {
+            transportText = 'Буду пассажиром';
+          } else if (transport === 'no') {
+            transportText = 'Нет, без машины';
+          }
+
+          const drinksList = Array.from(document.querySelectorAll('input[name="drinks"]:checked'))
+            .map(cb => cb.closest('.frame-9').innerText.trim())
+            .join(', ') || 'Не выбрано';
+
+          const foodList = Array.from(document.querySelectorAll('input[name="food"]:checked'))
+            .map(cb => cb.closest('.frame-9').innerText.trim())
+            .join(', ') || 'Не выбрано';
+
+          const allergy = document.querySelector('input[name="food-allergy"]')?.value.trim() || 'Нет';
+
+          message += `🛏 <b>Ночевка:</b> ${sleepoverText}\n`;
+          message += `🚗 <b>Транспорт:</b> ${transportText}\n`;
+          message += `🍷 <b>Напитки:</b> ${drinksList}\n`;
+          message += `🍽 <b>Еда:</b> ${foodList}\n`;
+          message += `⚠️ <b>Ограничения/аллергии:</b> ${allergy}\n`;
+        }
+
+        try {
+          const response = await fetch('/api/send', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ text: message })
+});
+
+          if (response.ok) {
+            if (goToHouse === 'no') {
+              modalMessage.textContent = `${guestName}, спасибо за ответ! Очень ждем тебя на торжественной церемонии во Дворце бракосочетания №1!`;
+            } else {
+              modalMessage.textContent = `${guestName}, твой ответ записан! Готовься к незабываемому празднику и тусовке в доме!`;
+            }
+
+            modal.classList.add('open');
+            form.reset();
+            handleHouseChange();
+            seatsSubfield.classList.remove('visible');
+            seatsInput.removeAttribute('required');
+            updateActiveStyles();
+          } else {
+            alert('Не удалось отправить форму в Telegram. Проверьте, что вы нажали /start в боте.');
+          }
+        } catch (error) {
+          alert('Ошибка соединения. Пожалуйста, попробуйте еще раз.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Отправить ответ';
+        }
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('open');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
